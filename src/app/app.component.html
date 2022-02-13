@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="headerInfo">
+    <div class="mainTitle"><span *ngFor="let item of mainData?.title">{{item}} </span></div>
+    <div>{{mainData?.description}}</div>
+  </div>
+
+  <div class="eta">(ETA)</div>
+  <div class="timeline">
+    <ul>
+      <li *ngFor="let item of mainData?.matches; let i = index" (click)="itemIndexFocus = i" [ngClass]="{'active' : i == itemIndexFocus}">
+        <div class="time">
+          <div class="timeInner">{{item.time}}</div>
+        </div>
+        <div class="details">
+          <div class="fighters">
+            <div class="fighter01">
+              <div class="firstName">{{item.fighters[0].name}}</div>
+              <div class="lastName">{{item.fighters[0].surname}}</div>
+            </div>
+            <div class="vs">vs</div>
+            <div class="fighter02">
+              <div class="firstName">{{item.fighters[1].name}}</div>
+              <div class="lastName">{{item.fighters[1].surname}}</div>
+            </div>
+          </div>
+          <div class="image"><img [src]="'assets/'+item.image" /></div>
+        </div>
+      </li>
+    </ul>
+  </div>
+<!--<router-outlet></router-outlet>-->
+</div>

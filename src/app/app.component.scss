@@ -1,0 +1,343 @@
+$desktopView: "(min-width: 1000px)";
+$tabletAndMobileView: "(max-width: 999px)";
+
+$tabletView: "(min-width: 568px) and (max-width: 999px)";
+$mobileView: "(max-width: 567px)";
+
+.container{
+    @media #{$desktopView} {
+        padding: 30px;
+      }
+}
+
+.headerInfo{
+    
+    margin-bottom: 30px;
+    font-family: "nimbus-sans-extended",sans-serif;
+    font-weight: 700;
+
+    .mainTitle{
+        
+        @media #{$desktopView} {
+            font-size: 440%;
+          }
+
+        @media #{$tabletAndMobileView} {
+            font-size: 280%;
+          }
+
+        color: #FFFFFF;
+        -webkit-text-fill-color: #000000; /* Will override color (regardless of order) */
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: #FFFFFF;
+        text-transform: uppercase;
+        margin-bottom: 30px;
+    
+        span:nth-of-type(1)
+        {
+            -webkit-text-stroke-color: #d43b38;
+        }
+    }
+}
+
+.eta{
+    margin-bottom: 20px;
+    font-family: "nimbus-sans",sans-serif;
+    font-weight: 400;
+}
+
+.timeline{
+
+    position: relative;
+    font-size: 160%;
+    line-height: 120%;
+
+    @media #{$tabletView} {
+        height: 600px;
+      }
+
+      @media #{$mobileView} {
+        height: 500px;
+      }
+
+      ul{
+        @media #{$tabletAndMobileView} {
+            display: table;
+            width: 94%;
+            border-bottom: 1px solid #d43b38;
+            margin: 0 auto;
+          }
+      }
+
+    li{
+
+        @media #{$tabletAndMobileView} {
+            display: table-cell;
+            vertical-align: middle;
+            padding-bottom: 20px;
+          }
+    }
+
+
+    li .time:after
+    {
+
+        content: " ";
+        position: absolute;
+        width: 14px;
+        height: 14px;
+        background-color: #d43b38;
+        border-radius: 14px;
+        opacity: 1;
+
+        @media #{$desktopView} {
+            right: -7px;
+            top: 30%;
+        }
+
+        @media #{$tabletAndMobileView} {
+            bottom: -28px;
+            left: 47%;
+        }
+    }
+
+    li.active .time:after{
+        box-shadow: 0px 0px 0px 3px rgba(212,59,56,0.3);
+    }
+
+    li:first-child .time:after
+    {
+
+        @media #{$desktopView} {
+            top: -26px;
+        }
+
+        @media #{$tabletAndMobileView} {
+            left: 10px;
+        }
+    }
+
+    li:last-child .time:after
+    {
+
+        background-color: #D2B085;
+
+        @media #{$desktopView} {
+            top: auto;
+            bottom: -26px;
+        }
+
+        @media #{$tabletAndMobileView} {
+            left: auto;
+            right: 10px;
+            
+        }
+    }
+
+
+    .timeInner, .fighters{
+        opacity: 0.5;
+    }
+
+    .active .timeInner, .active .fighters{
+        opacity: 1;
+    }
+
+    .time{
+        font-family: "nimbus-sans-condensed",sans-serif;
+        font-weight: 900;
+        cursor: pointer;
+        position: relative;
+
+        @media #{$desktopView} {
+            display: inline-block;
+            vertical-align: middle;
+            text-align: center;
+            width: 15%;
+          }
+
+        @media #{$tabletAndMobileView} {
+            text-align: center;
+            
+          }
+    }
+
+    li:first-child .time{
+
+        .timeInner{
+            @media #{$desktopView} {
+                margin-top: -32px;
+              }
+        }
+        
+
+        @media #{$tabletAndMobileView} {
+            text-align: left;
+            margin-left: -20px;
+          }
+    }
+
+    li:last-child .time{
+
+        .timeInner{
+            @media #{$desktopView} {
+                margin-bottom: -32px;
+                padding-top: 20px;
+              }
+        }
+
+
+        @media #{$tabletAndMobileView} {
+            text-align: right;
+            margin-right: -20px;
+          }
+    }
+
+    .details
+    {
+
+        @media #{$desktopView} {
+            display: inline-block;
+            vertical-align: middle;
+            text-align: center;
+            width: 40%;
+            border-left: 1px solid #d43b38;
+            padding: 20px 0px 20px 20px;
+          }
+    }
+
+    li:first-child .details .fighters
+    {
+        @media #{$desktopView} {
+            margin-top: -50px;
+          }
+    }
+
+    li:last-child .details .fighters
+    {
+        @media #{$desktopView} {
+            margin-bottom: -50px;
+          }
+    }
+
+
+    .fighters{
+
+        cursor: pointer;
+
+        @media #{$desktopView} {
+            width: 100%;
+            display: table;
+          }
+
+        .firstName, .vs{
+            color: #D2B085;
+        }
+
+        .firstName{
+            font-size: 70%;
+        }
+
+        .fighter01{
+            display: table-cell;
+            vertical-align: middle;
+            width: 33%;
+            margin-right: 30px;
+            font-family: "nimbus-sans-condensed",sans-serif;
+            font-weight: 900;
+        }
+
+        .vs{
+            display: table-cell;
+            vertical-align: middle;
+            width: 33%;
+            font-family: "nimbus-sans",sans-serif;
+            font-weight: 400;
+        }
+
+        .fighter02{
+            display: table-cell;
+            vertical-align: middle;
+            width: 33%;
+            margin-left: 30px;
+            font-family: "nimbus-sans-condensed",sans-serif;
+            font-weight: 900;
+        }
+    }
+
+    .image{
+
+        position: absolute;
+       
+
+        @media #{$desktopView} {
+            top: -60px;
+            right: 0px;
+            width: 45%;
+
+            img{
+                width: 100%;
+            }
+          }
+
+        @media #{$tabletAndMobileView} {
+            bottom: 0px;
+            left: 0px;
+            right: 0px;
+            text-align: center;
+          }
+
+          @media #{$tabletView} {
+            img{
+                width: 70%;
+            }
+          }
+
+          @media #{$mobileView} {
+            
+            img{
+                width: 100%;
+            }
+
+          }
+
+          
+    }
+
+    
+    @media #{$tabletAndMobileView} {
+      li{
+          .details{
+              display: none;
+          }
+      }
+
+      li.active{
+        .details{
+            display: block;
+
+                .fighters{
+                    display: none;
+                }
+            }
+        }
+    }
+
+
+
+    @media #{$desktopView} {
+        li{
+            .image{
+                display: none;
+            }
+        }
+
+        li.active{
+            .image{
+                display: block;
+            }
+        }
+      }
+
+    
+}
