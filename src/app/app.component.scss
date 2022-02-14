@@ -1,8 +1,6 @@
-$desktopView: "(min-width: 1000px)";
-$tabletAndMobileView: "(max-width: 999px)";
+$desktopView: "(min-width: 1030px)";
+$tabletAndMobileView: "(max-width: 1029px)";
 
-$tabletView: "(min-width: 568px) and (max-width: 999px)";
-$mobileView: "(max-width: 567px)";
 
 .container{
     @media #{$desktopView} {
@@ -52,13 +50,7 @@ $mobileView: "(max-width: 567px)";
     font-size: 160%;
     line-height: 120%;
 
-    @media #{$tabletView} {
-        height: 600px;
-      }
-
-      @media #{$mobileView} {
-        height: 500px;
-      }
+    
 
       ul{
         @media #{$tabletAndMobileView} {
@@ -200,9 +192,9 @@ $mobileView: "(max-width: 567px)";
             display: inline-block;
             vertical-align: middle;
             text-align: center;
-            width: 40%;
+            width: 35%;
             border-left: 1px solid #d43b38;
-            padding: 20px 0px 20px 20px;
+            padding: 20px 0px 20px 60px;
           }
     }
 
@@ -265,44 +257,7 @@ $mobileView: "(max-width: 567px)";
         }
     }
 
-    .image{
-
-        position: absolute;
-       
-
-        @media #{$desktopView} {
-            top: -60px;
-            right: 0px;
-            width: 45%;
-
-            img{
-                width: 100%;
-            }
-          }
-
-        @media #{$tabletAndMobileView} {
-            bottom: 0px;
-            left: 0px;
-            right: 0px;
-            text-align: center;
-          }
-
-          @media #{$tabletView} {
-            img{
-                width: 70%;
-            }
-          }
-
-          @media #{$mobileView} {
-            
-            img{
-                width: 100%;
-            }
-
-          }
-
-          
-    }
+    
 
     
     @media #{$tabletAndMobileView} {
@@ -325,19 +280,43 @@ $mobileView: "(max-width: 567px)";
 
 
 
-    @media #{$desktopView} {
-        li{
-            .image{
-                display: none;
-            }
-        }
-
-        li.active{
-            .image{
-                display: block;
-            }
-        }
-      }
+    
 
     
+}
+
+
+.image{
+
+    text-align: center;
+
+    @media #{$desktopView} {
+        position: absolute;
+        width: 400px;
+        right: 0px;
+        top: -40px;
+      }
+
+      @media #{$tabletAndMobileView} {
+        margin-top: 40px;
+      }
+
+
+    img{
+        width: 100%;
+        
+
+        @media #{$desktopView} {
+            max-width: 400px;
+          }
+
+          @media #{$tabletAndMobileView} {
+            max-width: 400px;
+          }
+    }
+       
+
+
+
+          
 }

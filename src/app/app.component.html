@@ -23,10 +23,11 @@
               <div class="lastName">{{item.fighters[1].surname}}</div>
             </div>
           </div>
-          <div class="image"><img [src]="'assets/'+item.image" /></div>
         </div>
       </li>
     </ul>
+    <div class="image" *ngIf="mainData != null"><img [src]="'assets/'+getImage()" /></div>
   </div>
+  
 <!--<router-outlet></router-outlet>-->
 </div>

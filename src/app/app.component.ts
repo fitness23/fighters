@@ -26,8 +26,10 @@ export class AppComponent implements OnInit {
               console.log(this.mainData);
                
             });
+  }
 
-  
 
-}
+  getImage() {
+    return this.mainData.matches[this.itemIndexFocus].image;
+  }
 }
